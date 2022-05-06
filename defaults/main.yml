@@ -7,5 +7,19 @@ duo_authproxy_service_user:     "duo_authproxy_svc"
 duo_authproxy_log_group:        "duo_authproxy_grp"
 duo_authproxy_init_script:      "yes"
 duo_authproxy_service:          "duoauthproxy"
-duo_authproxy_conf:             {}
 duo_authproxy_reinstall:        false
+duo_authproxy_conf:
+  ad_client:
+   host:
+   service_account_username:
+   service_account_password:
+   search_dn:
+  radius_server_auto:
+    ikey:
+    skey:
+    api_host:
+    radius_ip_1:
+    radius_secret_1:
+    failmode: safe
+    client: ad_client
+    port: 1812
