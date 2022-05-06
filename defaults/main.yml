@@ -1,0 +1,11 @@
+---
+duo_authproxy_version:          "latest"
+duo_authproxy_download_url:     "https://dl.duosecurity.com/duoauthproxy-{{ duo_authproxy_version }}-src.tgz"
+duo_authproxy_build_dir:        "/tmp/duoauthproxy"
+duo_authproxy_config_file:      "/opt/duoauthproxy/conf/authproxy.cfg"
+duo_authproxy_service_user:     "duo_authproxy_svc"
+duo_authproxy_log_group:        "duo_authproxy_grp"
+duo_authproxy_init_script:      "yes"
+duo_authproxy_service:          "duoauthproxy"
+duo_authproxy_conf:             {}
+duo_authproxy_reinstall:        false

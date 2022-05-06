@@ -1,0 +1,9 @@
+- name: start duoauthproxy
+  service:
+    name: "{{ duo_authproxy_service }}"
+    state: started
+
+- name: restart duoauthproxy
+  service:
+    name: "{{ duo_authproxy_service }}"
+    state: restarted

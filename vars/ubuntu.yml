@@ -1,0 +1,4 @@
+duo_authproxy_packages:         "build-essential libffi-dev perl zlib1g-dev"
+duo_authproxy_packages_selinux: "build-essential libffi-dev perl zlib1g-dev selinux-policy-devel"
+# most system logs are readable by adm group
+duo_authproxy_log_group:        "adm"

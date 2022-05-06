@@ -1,0 +1,13 @@
+# {{ ansible_managed }}
+{% for section in duo_authproxy_conf | sort %}
+[{{section}}]
+{% for key in duo_authproxy_conf[section] | sort %}
+{% set val = duo_authproxy_conf[section][key] %}
+{% if val == '' or val is undefined  %}
+# {{ key }}
+{% else  %}
+{{ key }}={{ 'yes' if val is sameas true else ('no' if val is sameas false else val) }}
+{% endif %}
+{% endfor %}
+
+{% endfor %}
