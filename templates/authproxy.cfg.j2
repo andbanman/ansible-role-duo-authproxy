@@ -25,7 +25,7 @@
 {% if val == '' or val is undefined  %}
 {{ key }}=
 {% else  %}
-{{ key }}={{ 'yes' if val is sameas true else ('no' if val is sameas false else val) }}
+{{ key }}={{ val }}
 {% endif %}
 {% endfor %}
 
