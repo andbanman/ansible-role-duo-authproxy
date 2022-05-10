@@ -32,9 +32,3 @@
     dest: "{{ duo_authproxy_config_file }}"
     mode: '0600'
   notify: restart duoauthproxy
-
-- name: Ensure service started
-  when: "not ansible_check_mode"
-  service:
-    name: "{{ duo_authproxy_service }}"
-    state: started
