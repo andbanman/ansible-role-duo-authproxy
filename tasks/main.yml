@@ -7,7 +7,9 @@
     - "{{ ansible_os_family | lower }}.yml"
 
 - name: Install prereq packages
-  package: "{{ duo_authproxy_packages }}"
+  package:
+    name: "{{ duo_authproxy_packages }}"
+    state: present
 
 - name: Check if Duo Authentication Proxy is already installed
   stat:
@@ -18,7 +20,7 @@
   when: "not ansible_check_mode and (not duo_authproxy_install.stat.exists or duo_authproxy_reinstall)"
   shell: |
     cd {{ duo_authproxy_build_dir }};
-    rm -f duoauthproxy-*-src.tgz
+    rm -f duoauthproxy-*-src.tgz;
     wget --content-disposition {{ duo_authproxy_download_url }};
     tar xzf duoauthproxy-*-src.tgz;
     cd duoauthproxy-*-src;
